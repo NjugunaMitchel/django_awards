@@ -1,0 +1,75 @@
+{%extends "base.html"%}
+{% load static %}
+{% load bootstrap4 %}
+{% block styles %}
+{% bootstrap_css%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/rates.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+      {% for project in project %}
+        <h3> {{project.name}}</h3>
+        <p><h3>link:</h3><a href="{{project.link}}">follow link to site</a> </p>
+        <img src="{{project.image.url}}">
+        
+    
+        <div class="col">
+          <div class="row">
+              <h4>Content:</h4>
+            
+              <div class="nums">1</div>
+              <div class="nums">2</div>
+              <div class="nums">3</div>
+              <div class="nums">4</div>
+              <div class="nums">5</div>
+              <div class="nums">6</div>
+              <div class="nums">7</div>
+              <div class="nums">8</div>
+              <div class="nums">9</div>
+              <div class="nums">10</div>
+            
+         </div>
+         <div class="row">
+            <h4>Content:</h4>
+          
+              <div class="nums">1</div>
+              <div class="nums">2</div>
+              <div class="nums">3</div>
+              <div class="nums">4</div>
+              <div class="nums">5</div>
+              <div class="nums">6</div>
+              <div class="nums">7</div>
+              <div class="nums">8</div>
+              <div class="nums">9</div>
+              <div class="nums">10</div>
+          
+       </div>
+
+       <div class="row">
+        <h4>creativity:</h4>
+      
+        <div class="nums">1</div>
+        <div class="nums">2</div>
+        <div class="nums">3</div>
+        <div class="nums">4</div>
+        <div class="nums">5</div>
+        <div class="nums">6</div>
+        <div class="nums">7</div>
+        <div class="nums">8</div>
+        <div class="nums">9</div>
+        <div class="nums">10</div>
+      
+   </div>
+        </div>
+        <hr>
+      {% endfor %}
+  </div>
+{% endblock %}
+
+{% block scripts %}
+{{block.super}}
+  <script scr="{% static 'js/rates.js'%}"  type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static%}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<nav class="navbar">
+  <a class="navbar-brand" href="#"><h1>Awwards</h1></a>
+  <form class="form-inline my-2 my-lg-0">
+    <button>submit project!</button> 
+  </form>
+    <div class="col-sm-6 col-md-6">
+      {% if user.is_authenticated %}
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                    <span class="caret"></span>
+                </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      {% else %}
+     
+        <a class='btn btn-default' href="{% url 'app:login' %}">Login</a>
+
+     
+
+      {% endif %}
+    </div>
+</nav>
+<hr>
+{% endblock %}
