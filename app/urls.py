@@ -3,10 +3,12 @@ from django.urls import path
 from django.conf.urls.static import static
 from . import views
 
-app_name='clone'
+app_name='app'
 
 urlpatterns = [
-    path('',views.signin, name='signin'),
-    path('login',views.login, name='login'),
+    path('',views.signup, name='signup'),
+    path('login/',views.login, name='login'),
+    path('landing/',views.landing, name='landing'),
+    path('rates/',views.rates, name='rates'),
 
 ]
