@@ -7,19 +7,19 @@ from django.contrib import messages
 from .models import Project,User
 # Create your views here.
 
-def signup(request):
+def login(request):
     form = CreateUserForm()
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request,'Account created for ' + User)
-            return redirect('login')
+            return redirect('index')
         
     context ={'form':form}
-    return render(request,'registration/signup.html',context)
+    return render(request,'registration/login.html',context)
 
-def login(request):
+def signup(request):
     form=CreateUserForm()
     if request.method=='POST':
         username = request.POST.get('username')
@@ -37,7 +37,7 @@ def login(request):
 
 def landing(request):
    
-    return render(request,'index.html',context)
+    return render(request,'index.html')
 
 def rates(request):
     project = Project.objects.all()
