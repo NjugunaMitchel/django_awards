@@ -1,0 +1,16 @@
+img{
+    width:500px;
+    height:200px;
+
+}
+
+.nums{
+    width:30px;
+    height: 30px;
+    border:1px solid blue;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin:5px;
+}
