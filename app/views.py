@@ -41,5 +41,6 @@ def landing(request):
 
 def rates(request):
     project = Project.objects.all()
-    context={'project':project}
+    obj=Project.objects.filter(rating=0).order_by('?').first()
+    context={'project':project,'obj':obj}
     return render(request,'rates.html',context)
