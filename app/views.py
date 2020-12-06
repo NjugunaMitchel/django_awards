@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import  RatesForm
+from .forms import  RatesForm, NewprojectForm
 from django.views.generic import CreateView
 from django.contrib import messages
 from .models import Project,Profiles,Reviews
@@ -25,7 +25,19 @@ def rates(request):
 def rateform(request):
     form = RatesForm()
     return render(request,'rateform.html',{'form': form})
+
 @login_required(login_url='/accounts/login/')
 def newproject(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewprojectForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = current_user
+            post.save()
+        return redirect('rates')
+    else:
+        form = NewprojectForm()
+    return render(request, 'newproject.html', {"form": form})
 
-    return render(request,'newproject.html')
+    

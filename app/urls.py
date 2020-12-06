@@ -10,6 +10,6 @@ urlpatterns = [
     url('rateform',views.rateform, name='rateform'),
     url(r'^rates/$',views.rates, name='rates'),
     url('^$',views.landing, name='landing'),
-    url('newproject',views.newproject, name='newproject'),
+    url(r'^newproject/$',views.newproject, name='newproject'),
 
 ]
