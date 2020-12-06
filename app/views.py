@@ -13,7 +13,7 @@ def landing(request):
    
     return render(request,'index.html')
 
-
+@login_required(login_url='/accounts/login/')
 def rates(request):
     project = Project.objects.all()
     obj=Project.objects.filter(reviews=1).order_by('?').first()
@@ -21,11 +21,11 @@ def rates(request):
     return render(request,'rates.html',context)
 
     
-
+@login_required(login_url='/accounts/login/')
 def rateform(request):
     form = RatesForm()
     return render(request,'rateform.html',{'form': form})
-
+@login_required(login_url='/accounts/login/')
 def newproject(request):
 
     return render(request,'newproject.html')
