@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{% load static %}
+{% load bootstrap4 %}
+{% block styles %}
+{% bootstrap_css%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+  <div class="container-">
+    <form  action="{%url 'app:newproject'%}" method="post">
+                   
+        {%csrf_token%}
+
+        {% bootstrap_form form%}
+        <div class="form-group" style=" width: 100%; margin:50px auto;">
+            <input type="submit" class="btn " value="Post"  style="background-color: rgb(26, 25, 25); color: white;" >
+
+        </div>
+
+    <input type="hidden" name="next" value="{{next}}">
+      </form>
+  </div>
+{% endblock%}

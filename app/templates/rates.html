@@ -11,45 +11,21 @@
 
   <div class="container">
       {% for project in project %}
-        <h3> {{project.name}}</h3>
-        <p><h3>link:</h3><a href="{{project.link}}">follow link to site</a> </p>
-        <img src="{{project.image.url}}">
-        
-    
-        <div class="col">
-          <div class="row">
-              <h4 style="margin-right: 10px;">Content:</h4>
-              <div class="row one">
-
+      <div class="row">
+          <div class="col">
+            <img src="{{project.image.url}}">
+          </div>
+          <div class="col">
+              <div>
+                <h3> {{project.name}}</h3>
+                <p><a href="{{project.link}}">Click to view  site</a> </p>
+                <button><a href="{% url 'app:rateform' %}">RATE ME</a></button>
               </div>
-            
-            </div>
-            
-         <div class="row">
-            <h4 style="margin-right: 20px;">Content:</h4>
-            <span class="row two">
-                  
-            </span>
-          
-       </div>
-
-       <div class="row">
-        <h4 style="margin-right: 10px;">creativity:</h4>
-        <span class="row three">
-                  
-        </span>
-   </div>
-        </div>
-        <h3> Rating :{{project.rating}}</h3>
+          </div>
+      </div>
+           
         <hr>
       {% endfor %}
-      <button id="block">
-          HELLO
-
-      </button>
-      <div class="rows">
-
-      </div>
   </div>
 {% endblock %}
 

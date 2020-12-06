@@ -3,25 +3,21 @@
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
-<nav class="navbar">
-  <a class="navbar-brand" href="#"><h1>Awwards</h1></a>
+<nav class="navbar bg-dark" style="padding-bottom:20px">
+  <a class="navbar-brand" href="#"><h1 style="font-family: 'Marck Script', cursive;font-weight: 800;font-size:36px;">Awwards</h1></a>
+  <a class='btn btn-default'style="color:aliceblue;" href="{% url 'app:rates'%}">projects</a>
   <form class="form-inline my-2 my-lg-0">
-    <button>submit project!</button> 
+    <button class="bg-dark"> <a href="./newproject.html" style="color:aliceblue;">submit project</a></button> 
   </form>
-    <div class="col-sm-6 col-md-6">
-      {% if user.is_authenticated %}
-      <li style="list-style-type: none;">
-        <a href="/login">Login</a>
-      </li>
-      {% else %}
-     
-        <a class='btn btn-default' href="{% url 'app:login' %}">Login</a>
-
-      {% endif %}
+    <div class="buttons" style="float:right">
+    
+         <a class='btn btn-default'style="color:aliceblue;" href="/accounts/login/">Login</a>
+         
+         <a class='btn btn-default' style="color:aliceblue;" href="/logout">Logout</a>
     </div>
 </nav>
-<hr>
+<hr style="margin:0px;margin-bottom:20px; padding:0px">
 {% endblock %}

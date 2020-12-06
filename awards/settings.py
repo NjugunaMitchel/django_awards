@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app',
     'bootstrap4',
     'cloudinary',
+    'mathfilters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -162,6 +163,9 @@ cloudinary.config(
   api_key = "324293994852453", 
   api_secret = "Y6pUdVeQLVyBX3bx-ZchNsI4OKY" 
 )
+LOGOUT_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL='/rates'
 
+AUTH_PROFILE_MODULE = 'accounts.Profile'
 # Configure Django App for Heroku.
 django_heroku.settings(locals())

@@ -14,3 +14,11 @@ img{
     vertical-align: middle;
     margin:20px;
 }
+
+select option{
+    width:400px;
+}
+
+label{
+    font-weight: 700;
+}

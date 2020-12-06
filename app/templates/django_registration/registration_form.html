@@ -1,4 +1,4 @@
-{%extends "registration/base.html"%}
+{%extends "django_registration/base.html"%}
 {% load static %}
 {% load bootstrap4 %}
 {% block styles %}
@@ -14,17 +14,17 @@
    <p> {{ message}}</p>
    {% endfor%}
 
-            <form action="/accounts/login/" method="post">
-                <h3 class="text-center">Login</h3>
+            <form action="/accounts/register/" method="post">
+                <h3 class="text-center">Sign up</h3>
                 {% csrf_token %}
                 {% bootstrap_form form%}  
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-sm" value="login">
+                    <input type="submit" class="btn btn-primary btn-sm" value="sign up">
                 </div>
 
+                <span>Already have an account? <a href="accounts/login">login</a></span> 
                 <input type="hidden" name="next" value="{{next}}">
-                
-               <span>Don't have an account? <a href="/accounts/register/">sign up</a></span>
+                           
             </form>
 </div>
 </div>
